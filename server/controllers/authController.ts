@@ -20,7 +20,7 @@ export const register = async (req: Request, res: Response) => {
       .cookie('token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production', // only send over HTTPS in prod
-        sameSite: 'strict',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
       })
       .status(200)
@@ -48,7 +48,7 @@ export const login = async (req: Request, res: Response) => {
       .cookie('token', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production', // only send over HTTPS in prod
-        sameSite: 'strict',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
       })
       .status(200)
@@ -64,7 +64,7 @@ export const logout = (req: Request, res: Response) => {
     .clearCookie('token', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict'
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     })
     .status(200)
     .json({ message: 'Logged out successfully' });
