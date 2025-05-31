@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState, useContext } from 'react';
 import { api } from '../api/axios';
 
-type User = { _id: string; name: string; email: string } | null;
+type User = any
 
 
 const AuthContext = createContext<{

@@ -1,6 +1,7 @@
 // src/components/ProtectedRoute.tsx
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
+import type { JSX } from 'react';
 
 type Props = {
   children: JSX.Element;
