@@ -1,10 +1,16 @@
-
 # 🏠 PropList – Property Listing Platform
 
 PropList is a full-stack real estate platform that lets users browse, list, favorite, and recommend properties. It includes role-based access, advanced search filter, pagination, and caching for performance optimization.
 
 ---
+## 🌐 Live Demo
 
+- 🖥️ Frontend: [https://prop-list-client.vercel.app](https://prop-list-client.vercel.app)
+- 🛠️ Backend (API): [https://prop-list-server.vercel.app](https://prop-list-server.vercel.app)
+
+> Note: You may need to log in to access certain routes.
+
+---
 ## 🚀 Features
 
 - 🔍 **Browse properties** with advanced filtering
@@ -49,6 +55,8 @@ PropList is a full-stack real estate platform that lets users browse, list, favo
     ```env
     MONGO_URI=your_mongo_uri                                  // MongoDB Atlas connect url
     JWT_SECRET=your_jwt_secret
+    REDIS_URL=your_redis_uri                                  // Upstash redis connect url
+    NODE_ENV=production                                       // only needed when deploying
     ```
 4. Populate CSV data into MongoDB
     ```bash
@@ -59,7 +67,6 @@ PropList is a full-stack real estate platform that lets users browse, list, favo
     ```bash
     npm start
     ```
-** If running server in Windows install redis using wsl
 
 ### 🌐 Frontend
 
@@ -73,7 +80,7 @@ PropList is a full-stack real estate platform that lets users browse, list, favo
     ```
 3. Create .env file:
     ```bash
-    VITE_API_URL=http://localhost:5000/api
+    VITE_API_URL=http://localhost:5000/api                    
     ```
 4. Start the app:
     ```bash
@@ -95,4 +102,3 @@ PropList is a full-stack real estate platform that lets users browse, list, favo
 
 ## 🤝 Contributions
 PRs welcome! Please fork the repo and make a pull request.
-
