@@ -60,8 +60,8 @@ PropList is a full-stack real estate platform that lets users browse, list, favo
     ```
 4. Populate CSV data into MongoDB
     ```bash
-    npx ts-node-dev src/scripts/createDummyUser.ts            // Create a dummy user
-    npx ts-node-dev src/scripts/importCsv.ts                  // CSV to MongoDB
+    npx ts-node-dev scripts/createDummyUser.ts            // Create a dummy user
+    npx ts-node-dev scripts/importCsv.ts                  // CSV to MongoDB
     ```
 5. Start the server
     ```bash
